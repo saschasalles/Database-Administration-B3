@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  maria_cluster_1:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  maria_cluster_2:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  maria_cluster_3:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: password

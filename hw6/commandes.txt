@@ -1,0 +1,22 @@
+TERMINAL
+docker exec -it tp6_slave_1 sh
+docker exec -it tp6_master_1 sh
+
+MASTER
+mariadb -u root -p < /scripts/replicationUser.sql
+mysql -u root -p
+
+SLAVE
+CHANGE MASTER TO
+MASTER_HOST='master',
+MASTER_USER='replicant',
+MASTER_PASSWORD='myPassword',
+MASTER_PORT=3306,
+MASTER_LOG_FILE='master1-bin.000011',
+MASTER_LOG_POS=1260,
+MASTER_CONNECT_RETRY=10;
+
+CHANGE MASTER TO MASTER_HOST='%', MASTER_USER='replicant', MASTER_PASSWORD='myPassword', MASTER_PORT=3306, MASTER_LOG_FILE='master1-bin.000010', MASTER_LOG_POS=802, MASTER_CONNECT_RETRY=10;
+
+
+1260 / master1-bin.000011
