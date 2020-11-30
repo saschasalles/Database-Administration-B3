@@ -7,9 +7,9 @@ Vous pouvez créer votre image en local dans ce cas vous devez me faire parvenir
 
 ## Etapes
 
-1 - Création d'un fichier `Dockerfile` que l'on pourra ensuite `build`, je me suis basé sur l'image trouvé sur dockerhub.
-2 - Ajouter des sources pour télécharger de nouvelles applications (`apt-get`), install de `vim` puis `cron`.  
-3 - Création d'une variable d'environnement dans le Dockerfile pour stocker le password de l'user root.
+* Création d'un fichier `Dockerfile` que l'on pourra ensuite `build`, je me suis basé sur l'image trouvé sur dockerhub.
+* Ajouter des sources pour télécharger de nouvelles applications (`apt-get`), install de `vim` puis `cron`.  
+* Création d'une variable d'environnement dans le Dockerfile pour stocker le password de l'user root.
   (On aurait pu la passer via `docker run`).
 
 ### DockerFile
@@ -30,9 +30,9 @@ Mettez en place une stratégie de backups grâce à cron qui génère un dump de
 
 ## Etapes
 
-1 - On reprend le `Dockerfile` de la première partie.
-2 - J'ajoute une ligne qui va écrire dans le fichier de config de cron pour l'user root qui fera un dump de toutes les bases de données chaque semaine et chaque mois le lundi à 17h.
-3 - Ce fichier sera compréssé avec `gzip` et portera le nom `all_databases`.
+* On reprend le `Dockerfile` de la première partie.
+* J'ajoute une ligne qui va écrire dans le fichier de config de cron pour l'user root qui fera un dump de toutes les bases de données chaque semaine et chaque mois le lundi à 17h.
+* Ce fichier sera compréssé avec `gzip` et portera le nom `all_databases`.
 
 ### DockerFile
 
@@ -55,8 +55,8 @@ Mettez en place une stratégie de backups avec logrotate qui réalise un dump jo
 
 ## Etapes
 
-1 - install de Logrotate.
-2 - Config de logrotate pour qu'il fasse une backup de notre base de données chaque jour et qu'il garde les 5 derniers dumps.
+* install de Logrotate.
+* Config de logrotate pour qu'il fasse une backup de notre base de données chaque jour et qu'il garde les 5 derniers dumps.
 Pour cela je modifie le fichier de conf de logrotate ici `/etc/logrotate.d/`.
 
 ### Dockerfile et lien de l'image complete
