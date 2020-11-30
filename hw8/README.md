@@ -33,10 +33,10 @@ On pourra donc utiliser leur nom comme nom d'hôte, docker fera le reste.
 
 ## Etapes
 
-Pour l'instant Prometheus n'a pas de source de données
-On va donc ajouter un volume à ce service dans le fichier `docker-compose`.
-Ce volume permettra au container d'accéder à un nouveau fichier : `prometheus.yml`.
-On indique à l'intérieur l'intervalle de temps d'analyse des données, la destination d'envoi des données (ici  `localhost:9090`) puis la source des données soit `exporter-mysql`, accessible au `mysql-exporter:9104`.
+Pour l'instant Prometheus n'a pas de source de données  
+On va donc ajouter un volume à ce service dans le fichier `docker-compose`.  
+Ce volume permettra au container d'accéder à un nouveau fichier : `prometheus.yml`.  
+On indique à l'intérieur l'intervalle de temps d'analyse des données, la destination d'envoi des données (ici  `localhost:9090`) puis la source des données soit `exporter-mysql`, accessible au `mysql-exporter:9104`.  
 
 ### Graphique avec les opérations de lecture & écriture
 
